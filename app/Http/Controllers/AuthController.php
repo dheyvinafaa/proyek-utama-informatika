@@ -37,6 +37,11 @@ class AuthController extends Controller
                 $request->session()->put('email', $data->email);
                 $request->session()->put('role', $data->role);
                 $request->session()->put('initial', $data->username[0]);
+
+                if($data->role == 'admin') return redirect()->route('dashboard.index');
+                if($data->role == 'penjual') return redirect()->route('dashboard.index');
+                else return redirect()->route('index');
+
                 return redirect()->route('index');
             } else {
                 return back()->with('fail', 'Password salah');
