@@ -98,7 +98,7 @@
 						<div class="card-body mt-2">
 							<h5 class="text-center">Selamat Datang di Website Dashboard CampusBitesUTY</h5>
 							<p class="text-center">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid ipsam explicabo minus ducimus non, maiores dolore illo corporis quis iure?
+								CampusBitesUTY adalah Website kantin online bagi mahasiswa untuk memesan makanan dan minuman dari kantin kampus dengan mudah.
 							</p>
 						</div>
 					</div>
