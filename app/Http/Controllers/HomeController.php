@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Canteen;
 use App\Models\Menu;
+use App\Models\Order;
 
 class HomeController extends Controller
 {
@@ -13,6 +14,13 @@ class HomeController extends Controller
         return view('index', [
             'categories' => Category::all(),
             'canteens' => Canteen::all(),
+        ]);
+    }
+
+    public function history() {
+        $order = Order::with('menu')->where('user_id', session('id'))->get();
+        return view('history', [
+            'orders' => $order,
         ]);
     }
 

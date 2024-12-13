@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Users;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Cart;
+use Firebase\JWT\ExpiredException;
+use Firebase\JWT\JWT;
+use Firebase\JWT\Key;
 
 class AuthController extends Controller
 {
@@ -82,6 +85,17 @@ class AuthController extends Controller
         ]);
 
         return redirect()->route('login')->with('success', 'Register berhasil, silahkan login');
+    }
+
+    public static function getJWT($token)
+    {
+        try {
+            $token = str_replace('Bearer ', '', $token);
+            if(!$token) return redirect()->route('login');
+            return JWT::decode($token, new Key(env('JWT_KEY'), 'HS256'));
+        } catch (ExpiredException) {
+            return false;
+        }
     }
 
     public function logout() {

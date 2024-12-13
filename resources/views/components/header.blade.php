@@ -26,6 +26,10 @@
       <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
         <i class="fa fa-shopping-cart fs-4 text-custom-primary me-4" aria-hidden="true"></i>
       </button>
+
+      <a href="{{ route('history') }}">
+        <i class="fa fa-history fs-4 text-custom-primary me-4" aria-hidden="true"></i>
+      </a>
       @if(session('username'))
         <div class="d-flex justify-content-center align-items-center gap-3">
           <div class="d-flex justify-content-center align-items-center gap-1">
