@@ -1,17 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CartController;
 use App\Http\Middleware\CheckLogin;
 use App\Http\Controllers\API\AuthController as APIAuthController;
 use App\Http\Controllers\API\MainController;
 use App\Http\Middleware\JwtAuth;
-
-Route::group(['prefix' => 'api', 'middleware' => CheckLogin::class], function() {
-	Route::get('/cart', [CartController::class, 'index']);
-	Route::post('/cart', [CartController::class, 'store'])->name('cart.store');
-	Route::get('/cart/{id}', [CartController::class, 'delete']);
-});
+use App\Http\Controllers\API\CartController;
 
 Route::group(['prefix' => 'api'], function() {
 	Route::post('/login', [APIAuthController::class, 'login']);
@@ -22,5 +16,9 @@ Route::group(['prefix' => 'api'], function() {
 		Route::get('/canteen', [MainController::class, 'canteen']);
 		Route::get('/canteen/{id}', [MainController::class, 'detailCanteen']);
 		Route::get('/history', [MainController::class, 'history']);
+
+		Route::get('/cart', [CartController::class, 'index']);
+		Route::post('/cart', [CartController::class, 'store'])->name('cart.store');
+		Route::delete('/cart/{id}', [CartController::class, 'delete']);
 	});
 });
