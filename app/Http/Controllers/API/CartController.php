@@ -36,7 +36,10 @@ class CartController extends Controller
 		if($cartItems) {
 			$cartItems->quantity += 1;
 			$cartItems->save();
-			return back()->with('success', 'Berhasil menambahkan menu ke keranjang');
+			return response()->json([
+				'success' => true,
+				'message' => 'Berhasil menambahkan menu ke keranjang'
+			]);
 		} else {
 			CartItems::create([
 				'cart_id' => $cart->id,
@@ -46,7 +49,10 @@ class CartController extends Controller
 				'note' => '',
 			]);
 
-			return back()->with('success', 'Berhasil menambahkan menu ke keranjang');
+			return response()->json([
+				'success' => true,
+				'message' => 'Berhasil menambahkan menu ke keranjang'
+			]);
 		}
 	}
 
