@@ -6,6 +6,7 @@ use App\Http\Controllers\API\AuthController as APIAuthController;
 use App\Http\Controllers\API\MainController;
 use App\Http\Middleware\JwtAuth;
 use App\Http\Controllers\API\CartController;
+use App\Http\Controllers\API\TransactionController;
 
 Route::group(['prefix' => 'api'], function() {
 	Route::post('/login', [APIAuthController::class, 'login']);
@@ -20,6 +21,9 @@ Route::group(['prefix' => 'api'], function() {
 
 		Route::get('/cart', [CartController::class, 'index']);
 		Route::post('/cart', [CartController::class, 'store'])->name('cart.store');
+
+		Route::post('/order', [TransactionController::class, 'store']);
+
 		Route::delete('/cart/{id}', [CartController::class, 'delete']);
 	});
 });
