@@ -15,6 +15,7 @@ use App\Models\Canteen;
 use App\Models\Order;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Menu;
 
 class MainController extends Controller
 {
@@ -57,6 +58,18 @@ class MainController extends Controller
 			'success' => true,
 			'message' => 'Order History',
 			'data' => $order
+		]);
+	}
+
+	public function profile()
+	{
+		$token = session('token');
+		$user = Users::find(AuthController::getJWT($token)->user_id);
+
+		return response()->json([
+			'success' => true,
+			'message' => 'Profile',
+			'data' => $user
 		]);
 	}
 }

@@ -16,6 +16,7 @@ Route::group(['prefix' => 'api'], function() {
 		Route::get('/canteen', [MainController::class, 'canteen']);
 		Route::get('/canteen/{id}', [MainController::class, 'detailCanteen']);
 		Route::get('/history', [MainController::class, 'history']);
+		Route::get('/profile', [MainController::class, 'profile']);
 
 		Route::get('/cart', [CartController::class, 'index']);
 		Route::post('/cart', [CartController::class, 'store'])->name('cart.store');
