@@ -44,7 +44,7 @@
             <div class="col-lg-2">
               <div class="m-3 text-center">
                 <a href="{{ route('category', $category->slug) }}" class="text-decoration-none text-dark">
-                  <img src="{{ asset('categoryImages/' . $category->image) }}" class="rounded-pill" alt="{{ $category->image }}" style="width: 150px;height: 150px;">
+                  <img src="{{ $category->image }}" class="rounded-pill" alt="{{ $category->image }}" style="width: 150px;height: 150px;">
                 </a>
                 <h5 class="text-center mt-4">{{ $category->name }}</h5>
               </div>
@@ -65,7 +65,7 @@
             <div class="col-lg-2">
               <a href="{{ route('kantin' , $canteen->slug) }}" class="text-decoration-none text-dark">
                 <div class="m-3 text-center">
-                  <img src="{{ asset('img/' . $canteen->image) }}" class="w-75" alt="{{ $canteen->image }}">
+                  <img src="{{ $canteen->image }}" class="w-75" alt="{{ $canteen->image }}">
                   <h5 class="text-center mt-4">{{ $canteen->name }}</h5>
                 </div>
               </a>

@@ -25,7 +25,7 @@
 			<div class="d-flex gap-5">
 				@foreach($menus as $menu)
           <div class="card" style="width: 18rem;">
-            <img src="{{ asset('menuImages/' . $menu->image) }}" class="card-img-top" alt="nasi">
+            <img src="{{ $menu->image }}" class="card-img-top" alt="nasi">
             <div class="card-body">
               <h5 class="card-title">{{ $menu->name }}</h5>
 							<span class="badge rounded-pill text-white bg-custom-primary mb-2">{{ $menu->canteen->name }}</span>

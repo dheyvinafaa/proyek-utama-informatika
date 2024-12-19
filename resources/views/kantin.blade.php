@@ -59,7 +59,7 @@
 				<div class="d-flex justify-content-center gap-4">
           @foreach($menus as $menu)
             <div class="card" style="width: 18rem;">
-              <img src="{{ asset('menuImages/' . $menu->image) }}" class="card-img-top" alt="nasi">
+              <img src="{{ $menu->image }}" class="card-img-top" alt="nasi">
               <div class="card-body">
                 <h5 class="card-title">{{ $menu->name }}</h5>
                 <p class="card-text">{{ $menu->description }}</p>
