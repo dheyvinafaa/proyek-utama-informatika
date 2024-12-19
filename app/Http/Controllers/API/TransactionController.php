@@ -26,7 +26,7 @@ class TransactionController extends Controller
 		foreach($cartItems as $cartItem) {
 			Order::create([
 				'order_number' => $oderNumber,
-				'user_id' => session('id'),
+				'user_id' => $user->id,
 				'menu_id' => $cartItem->menu_id,
 				'canteen_id' => $cartItem->menu->canteen->id,
 				'quantity' => $cartItem->quantity,
