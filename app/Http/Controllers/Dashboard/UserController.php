@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Users;
+use App\Models\Canteen;
 
 class UserController extends Controller
 {
@@ -26,6 +27,8 @@ class UserController extends Controller
 			'password' => 'required',
 			'role' => 'required',
 		]);
+
+
 
 		Users::create([
 			'username' => $request->username,
