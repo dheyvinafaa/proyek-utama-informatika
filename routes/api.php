@@ -21,12 +21,11 @@ Route::group(['prefix' => 'api'], function() {
 		Route::get('/profile', [MainController::class, 'profile']);
 
 		Route::get('/cart', [CartController::class, 'index']);
-		Route::post('/cart', [CartController::class, 'store'])->name('cart.store');
+		Route::post('/cart', [CartController::class, 'store']);
+		Route::delete('/cart/{id}', [CartController::class, 'delete']);
 
 		Route::put('/updateProfile', [ProfileController::class, 'update']);
 
 		Route::post('/order', [TransactionController::class, 'store']);
-
-		Route::delete('/cart/{id}', [CartController::class, 'delete']);
 	});
 });

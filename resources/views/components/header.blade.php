@@ -91,7 +91,7 @@
   <script>
     const table = document.getElementById('table');
 
-    fetch('/api/cart')
+    fetch('/api2/cart')
       .then(response => response.json())
       .then(data => {
         data.data.forEach(item => {
@@ -104,7 +104,7 @@
             <td>${item.quantity}</td>
             <td>${total}</td>
             <td>
-              <a href='/api/cart/${item.id}' class="btn btn-danger">
+              <a href='/api2/cart/${item.id}' class="btn btn-danger">
                 <i class="fa fa-trash" aria-hidden="true"></i>
               </a>
             </td>
