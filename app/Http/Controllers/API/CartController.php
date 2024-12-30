@@ -57,9 +57,12 @@ class CartController extends Controller
 	}
 
 	public function delete($id) {
-		$cartItems = CartItems::find($id);
+		$cartItems = CartItems::findOrfail($id);
 		$cartItems->delete();
 
-		return back()->with('success', 'Berhasil menghapus menu dari keranjang');
+		return response()->json([
+				'success' => true,
+				'message' => 'Berhasil menghapus menu dari keranjang'
+			]);
 	}
 }
