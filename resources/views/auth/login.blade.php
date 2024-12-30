@@ -59,7 +59,7 @@
 									<input type="password" name="password" value="{{ old('password') }}" class="form-control">
 								</div>
 								<button type="submit" class="btn mt-3 w-100 bg-custom-primary text-white">Masuk</button>
-								<p class="text-center mt-3">Lupa password? <a href="{{ route('register') }}" class="text-custom-primary text-decoration-none">Daftar</a></p>
+								<p class="text-center mt-3">Belum memiliki akun? <a href="{{ route('register') }}" class="text-custom-primary text-decoration-none">Daftar</a></p>
 							</form>
 					</div>
 				</div>
