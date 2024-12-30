@@ -83,4 +83,15 @@ class MainController extends Controller
 			'data' => $menu
 		]);
 	}
+
+	public function search(Request $request)
+	{
+		$menu = Menu::where('name', 'like', '%' . $request->name . '%')->get();
+
+		return response()->json([
+			'success' => true,
+			'message' => 'Search Menu',
+			'data' => $menu
+		]);
+	}
 }

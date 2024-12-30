@@ -17,6 +17,8 @@ Route::group(['prefix' => 'api'], function() {
 		Route::get('/category', [MainController::class, 'category']);
 		Route::get('/category/menu/{id}', [MainController::class, 'getMenuByCategory']);
 
+		Route::get('/search', [MainController::class, 'search']);
+
 		Route::get('/canteen', [MainController::class, 'canteen']);
 		Route::get('/canteen/{id}', [MainController::class, 'detailCanteen']);
 		Route::get('/history', [MainController::class, 'history']);
