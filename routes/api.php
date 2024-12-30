@@ -15,6 +15,8 @@ Route::group(['prefix' => 'api'], function() {
 
 	Route::middleware(JwtAuth::class)->group(function () {
 		Route::get('/category', [MainController::class, 'category']);
+		Route::get('/category/menu/{id}', [MainController::class, 'getMenuByCategory']);
+
 		Route::get('/canteen', [MainController::class, 'canteen']);
 		Route::get('/canteen/{id}', [MainController::class, 'detailCanteen']);
 		Route::get('/history', [MainController::class, 'history']);

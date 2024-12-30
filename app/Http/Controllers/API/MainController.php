@@ -72,4 +72,15 @@ class MainController extends Controller
 			'data' => $user
 		]);
 	}
+
+	public function getMenuByCategory($id)
+	{
+		$menu = Menu::where('category_id', $id)->get();
+
+		return response()->json([
+			'success' => true,
+			'message' => 'Menu by Category',
+			'data' => $menu
+		]);
+	}
 }
