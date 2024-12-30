@@ -30,7 +30,7 @@
 								<td>{{ $item->name }}</td>
 								<td>{{ Str::substr($item->description, 0, 50) . '...' }}</td>
 								<td>Rp {{ number_format($item->price, 0, ',', '.') }}</td>
-								<td><a href="{{ asset('menuImages/' . $item->image) }}" target="_blank">Lihat Gambar</a></td>
+								<td><a href="{{ $item->image }}" target="_blank">Lihat Gambar</a></td>
 								<td>				
 									<button type="button" class="btn btn-sm btn-primary dropdown-toggle me-1"
 										id="dropdownMenuButton"

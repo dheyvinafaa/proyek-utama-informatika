@@ -29,7 +29,7 @@
 								<td>{{ $loop->iteration }}</td>
 								<td>{{ $item->name }}</td>
 								<td>{{ $item->description }}</td>
-								<td><a href="{{ asset('categoryImages/'.$item->image) }}" target="_blank">Lihat Gambar</a></td>
+								<td><a href="{{ $item->image }}" target="_blank">Lihat Gambar</a></td>
 								<td>{{ $item->created_at }}</td>
 								<td>				
 									<button type="button" class="btn btn-sm btn-primary dropdown-toggle me-1"
