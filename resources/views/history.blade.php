@@ -14,7 +14,7 @@
     @include('components.header')
     <div class="container mt-5">
 			{{-- use grid, limit per row 3 --}}
-			<div class="row row-cols-1 row-cols-md-3 g-4">
+			<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; @media (max-width: 768px) { grid-template-columns: repeat(2, 1fr); }">
 				@foreach($orders as $order)
           <div class="card" style="width: 18rem;">
 						<div class="card-body">
