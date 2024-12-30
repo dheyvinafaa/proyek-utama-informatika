@@ -54,9 +54,13 @@ class MenuController extends Controller
 
 	public function delete($id) {
 		$menu = Menu::find($id);
+		$image = $menu->image;
+
+		$image = explode('menuImages/', $image)[0];
+		$split_image = explode('/', $image)[4];
 
 		// delete image
-		$image_path = public_path('menuImages/'.$menu->image);
+		$image_path = public_path($split_image);
 		if(file_exists($image_path)) {
 			unlink($image_path);
 		}

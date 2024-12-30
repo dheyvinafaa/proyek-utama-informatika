@@ -41,10 +41,18 @@ class CategoryController extends Controller
 
 	public function delete($id) {
 		$category = Category::find($id);
-		unlink(public_path('categoryImages/'.$category->image));
+		$image = $category->image;
+
+		$split_image = explode('/', $image)[4];
+
+		// delete image
+		$image_path = public_path('categoryImages/' . $split_image);
+		if(file_exists($image_path)) {
+			unlink($image_path);
+		}
 
 		$category->delete();
 
-		return redirect()->route('dashboard.category')->with('success', 'Kategori berhasil dihapus');
+		return back()->with('success', 'Category berhasil dihapus');
 	}
 }
