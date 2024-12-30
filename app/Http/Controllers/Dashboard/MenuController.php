@@ -46,7 +46,7 @@ class MenuController extends Controller
 			'price' => $request->price,
 			'category_id' => $request->category_id,
 			'canteen_id' => $canteen->id,
-			'image' => $imageName
+			'image' => asset('menuImages/'.$imageName),
 		]);
 
 		return redirect()->route('dashboard.menu')->with('success', 'Menu berhasil ditambahkan');

@@ -33,7 +33,7 @@ class CategoryController extends Controller
 			'name' => $request->name,
 			'slug' => Str::slug($request->name), 
 			'description' => $request->description,
-			'image' => $imageName,
+			'image' => asset('categoryImages/'.$imageName),
 		]);
 
 		return redirect()->route('dashboard.category')->with('success', 'Kategori berhasil ditambahkan');

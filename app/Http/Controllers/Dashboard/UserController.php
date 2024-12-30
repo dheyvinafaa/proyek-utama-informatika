@@ -28,8 +28,6 @@ class UserController extends Controller
 			'role' => 'required',
 		]);
 
-
-
 		Users::create([
 			'username' => $request->username,
 			'email' => $request->email,
