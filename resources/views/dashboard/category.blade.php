@@ -44,8 +44,6 @@
 										class="dropdown-menu fade"
 										aria-labelledby="dropdownMenuButton"
 									>
-										<button type="button" id="editBtn" class="dropdown-item" data-bs-toggle="modal" value="{{ $item->id }}" data-bs-target="#editCategory" fdprocessedid="gjh7mli">Edit</button>
-										<hr style="margin: 0;padding: 0;">
 										<form action="{{ route('dashboard.category.delete', $item->id) }}" method="POST">
 											@csrf
 											@method('DELETE')
