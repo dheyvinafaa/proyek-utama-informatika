@@ -18,9 +18,6 @@
       <div class="position-absolute text-center text-white" style="top: 50%; left: 50%; transform: translate(-50%, -70%); padding: 20px; border-radius: 10px;">
         <img src="{{ asset('img/eat.png') }}" alt="Responsive image" style="width: 100px;">
         <h3 class="text-center text-white fw-bold mt-2">Makan enak? CampusBites aja!</h3>
-        <div class="col-md-9 text-center m-auto">
-          <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, rem a quasi laboriosam facilis veritatis?</p>
-        </div>
       </div>
 
       {{-- create white box in middle botton --}}
